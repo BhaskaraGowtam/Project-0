@@ -15,11 +15,11 @@ public class OrkutView {
 			
 			System.out.println("************ WELCOME TO ORKUT ***********");
 			System.out.println("____/MAIN MENU/____");
-			System.out.println("press 1 to create profile");
+			System.out.println("press 1 to Sign-up");
 			System.out.println("press 2 to search profile");
 			System.out.println("press 3 to view all profiles");
 			System.out.println("press 4 to delete profile");
-			System.out.println("press 5 to login profile");
+			System.out.println("press 5 to Sign-in profile");
 			System.out.println("press 6 to edit profile");
 			
 			int ch=sc.nextInt();
@@ -66,10 +66,10 @@ public class OrkutView {
 		break;
 			case 5 : int i4=lc.loginProfileController();
 			  if(i4>0) {
-				  System.out.println( "profile logged-in successfully");
+				  System.out.println( "profile signed-in successfully");
 			  }
 			  else {
-				  System.out.println("login failed!");
+				  System.out.println("login failed! \n (credentials mismatch)");
 			  }
 		break;
 			case 6 : int i5=lc.editProfileController();
@@ -84,7 +84,7 @@ public class OrkutView {
 			}
 			
 			System.out.println("---------------------------");
-			System.out.println(" Do you want to continue press y ");
+			System.out.println(" Do you want to continue press y \nOR\n Press any key to abort ");
 			System.out.println("---------------------------");
 			s=sc.next();
 		}

@@ -14,37 +14,36 @@ public class OrkutService implements OrkutServiceInterface {
 		return ld.createProfileDAO(lu);
 	}
 
-	@Override
+	//@Override
 	public OrkutUser viewProfileService(OrkutUser lu) {
 		OrkutDAOInterface ld=DaoFactory.createObject();
 		return ld.viewProfileDAO(lu);
 	}
 
-	@Override
+	//@Override
 	public List<OrkutUser> viewAllProfileService() {
 		OrkutDAOInterface ld=DaoFactory.createObject();
 		return ld.viewAllProfileDAO();
 	}
 
-	@Override
+	//@Override
 	public int deleteProfileService(OrkutUser lu) {
 		OrkutDAOInterface ld=DaoFactory.createObject();
 		return ld.deleteProfileDAO(lu);
 	}
 
-	@Override
+	//@Override
 	public OrkutUser loginProfileService(OrkutUser lu) {
 		OrkutDAOInterface ld=DaoFactory.createObject();
 		return ld.loginProfileDAO(lu);
 	}
 
-	@Override
+	//@Override
 	public List<TimeLineEntity> timelineService(OrkutUser lu) {
 		OrkutDAOInterface ld=DaoFactory.createObject();
 		return ld.timelineProfileDAO(lu);
 	}
 
-	@Override
 	public int editProfileService(OrkutUser lu) {
 		OrkutDAOInterface ld=DaoFactory.createObject();
 		return  ld.editProfileDAO(lu);

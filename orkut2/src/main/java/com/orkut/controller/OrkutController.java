@@ -1,8 +1,12 @@
 package com.orkut.controller;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Scanner;
 import java.util.logging.Logger;
+
+import javax.print.attribute.standard.DateTimeAtCompleted;
 
 import com.orkut.entity.OrkutUser;
 import com.orkut.entity.TimeLineEntity;
@@ -37,6 +41,8 @@ public class OrkutController implements OrkutControllerInterface {
 		lu.setEmail(email);
 		lu.setAddress(address);
 		
+		//if(email.equals("y"))
+		
 		OrkutServiceInterface ls=ServiceFactory.createObject();
 		
 		
@@ -67,7 +73,8 @@ public class OrkutController implements OrkutControllerInterface {
 			System.out.println("Email is "+lu1.getEmail());
 			System.out.println("Address is "+lu1.getAddress());
 			i=1;
-		}
+		} 
+		
 		
 		return i;
 	}
@@ -92,7 +99,7 @@ public class OrkutController implements OrkutControllerInterface {
 		
 		return lu1.size();
 	}
-
+	
 	private static Logger Log4= Logger.getLogger("OrkutController");
 	public int deleteProfileController() {
 		Log4.info("Inside delete profile method");
@@ -112,7 +119,7 @@ public class OrkutController implements OrkutControllerInterface {
 
     private static Logger Log5=Logger.getLogger("OrkutController"); 
 	public int loginProfileController() {
-		Log5.info("Inside Log in profile method");
+		Log5.info("Inside sign in profile method");
 		
 		Scanner sc=new Scanner(System.in);
 		
@@ -138,8 +145,8 @@ public class OrkutController implements OrkutControllerInterface {
 			String s="s";
 			while(s.equals("s")){
 			System.out.println("Welcome "+uu.getName());
-			System.out.println("Press 1 to view timeline");
-			System.out.println("Press 2 to LogOut");
+			System.out.println("Press 1 to Chat");
+			System.out.println("Press 2 to Sign-off");
 			
 			System.out.println("Enter your choice");
 			int cc=sc.nextInt();
@@ -148,21 +155,30 @@ public class OrkutController implements OrkutControllerInterface {
 			
 			switch(cc) {
 			case 1 :
-				System.out.println("Enter sender name");
-				tl.setSender(sc11.nextLine());
+				//System.out.println("Enter sender name");
+				//tl.setSender(sc11.nextLine());
 				System.out.println("Enter recevier name");
 				tl.setReceiver(sc11.nextLine());
 				System.out.println("Enter message");
 				tl.setMessage(sc11.nextLine());
 				
+				DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");  
+				LocalDateTime currentTime = LocalDateTime.now();
+				String dateString;
+				dateString = dtf.format(currentTime).toString();
+				tl.setMessageOfTime(dateString.substring(dateString.indexOf(" ")));
+				
+				
+				
 				System.out.println("===== Message sent sucessfully  to "+tl.getReceiver()+ " ====>>");
-				System.out.println("===> New message from "+ tl.getSender());
+				//System.out.println("===> New message from "+ tl.getSender());
 				System.out.println("Message :::"+ tl.getMessage());
+				System.out.println("TimeOfMessage :::"+tl.getMessageOfTime());
 				System.out.println(" Do you want to continue press s ");
 				s=sc.next();
 				break;
 			case 2 : 
-				System.out.println("LogOut Successfully");
+				System.out.println("Signed-off Successfully");
 				System.out.println("==== //Thank you// ====");
 				int status = 0;
 				System.exit(status);
@@ -178,7 +194,7 @@ public class OrkutController implements OrkutControllerInterface {
 	}
 
 	private static Logger Log6=Logger.getLogger("OrkutController"); 
-	@Override
+	
 	public int editProfileController() {
 		Log6.info("Inside Log in profile method");
 		Scanner sc=new Scanner(System.in);
