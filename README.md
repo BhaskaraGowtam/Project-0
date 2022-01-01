@@ -3,14 +3,13 @@ Java project ( Social media app )
 # ORKUT
 # Project Description
 
-Our Orkut is a console based social media application which enables the users to create their profile and let them surf on. Users of this app can maintain good communication through the _chat 
+Our Orkut is a console based user-friendly social media application which enable you to create your profile then. Through this app you can maintain good communication through the _chat_. You can easily search the one you want and can start a chat.Woooo that's alot. And we're looking forward to develop even more awesome features. 
 
-Technologies Used
-Tech 1 - version 1.0
-Tech 2 - version 2.0
-Tech 3 - version 3.0
-Features
-List of features ready and TODOs for future development
+# Technologies Used
+ Java 1.8
+ JDBC
+ SQL
+#  features
 
 Awesome feature 1
 Awesome feature 2
