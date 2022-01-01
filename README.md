@@ -10,6 +10,7 @@ Our Orkut is a console based user-friendly social media application which enable
  - Java 1.8
  - JDBC
  - SQL
+ - Eclipse IDE
  
 #  features
 - Security  - No one can go through your profile without your login credentials.
