@@ -19,5 +19,16 @@ Our Orkut is a console based user-friendly social media application which enable
 
 We're currently working on:
   - A UI for making interation even more easy. 
-# License
-license: _public_.
+  
+ ## Getting Started :
+ 
+ 
+ ## Usage
+   
+   you can run the project by running the view layer of the poject.
+
+## contributor(s):
+   Bhaskara Gowtam Andra
+  
+# License :
+ _public_.
